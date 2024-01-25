@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sleep infinity
+    network_mode: host
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pets_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres:

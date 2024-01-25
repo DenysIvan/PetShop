@@ -1,0 +1,33 @@
+###
+# Post for new pet
+POST http://localhost:8080/pets
+Content-Type: application/json
+{
+  "name": "Katy Purry",
+  "type": "cat",
+  "color": "black",
+  "parents" :
+ {
+    "mother": "917cb6b1-60c3-44d6-b30d-baa0ca2fa132",
+    "father": "f9275923-a3de-460a-a9bd-d6341185adef"
+  }
+}
+
+###
+# Get All pets
+GET http://localhost:8080/pets
+
+###
+# Get pet by ID
+GET http://localhost:8080/pets/1
+
+###
+# Put pet by ID
+PUT http://localhost:8080/pets/1
+Content-Type: application/json
+
+{
+"name": "Updated Kat",
+"type": "updatedCat",
+"color": "White"
+}
